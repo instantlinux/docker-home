@@ -17,10 +17,10 @@ ENV KEEPALIVE_CONFIG_ID=main \
     TIMEOUT=50000 \
     TZ=UTC
 
-RUN apk add --no-cache --update \
-      keepalived=$KEEPALIVED_VERSION rsyslog && \
-    adduser -D -s /bin/false haproxy && \
+RUN adduser -S -u 99 haproxy && \
     adduser -D -s /bin/sh keepalived_script && \
+    apk add --no-cache --update \
+      keepalived=$KEEPALIVED_VERSION rsyslog && \
     mv /etc/keepalived/keepalived.conf /etc/keepalived/keepalived.dist
 
 EXPOSE 8080

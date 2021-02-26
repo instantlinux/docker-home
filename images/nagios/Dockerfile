@@ -33,7 +33,7 @@ RUN echo '@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing' \
       nagios && \
     apk add --update --no-cache nagios=$NAGIOS_VERSION \
       nagios-plugins-all=$PLUGINS_VERSION nagios-web \
-      nrpe-plugi bash curl fcgiwrap file mariadb-client nginx openssl \
+      nrpe-plugin bash curl fcgiwrap file mariadb-client nginx openssl \
       perl-crypt-x509 perl-libwww perl-text-glob perl-timedate \
       php7 php7-fpm py3-pip py3-pymysql@testing python3 ssmtp tzdata && \
     addgroup nginx nagios && \
